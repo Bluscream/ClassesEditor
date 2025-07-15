@@ -1,0 +1,28 @@
+<Window x:Class="MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ClassesEditor.ViewModels;assembly=ClassesEditor.Shared"
+        xmlns:views="clr-namespace:Views"
+        mc:Ignorable="d"
+        Title="File Type Editor" Height="600" Width="900">
+    <!-- DataContext will be set in code-behind -->
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0" Margin="10">
+            <Button Content="Refresh" Click="Refresh_Click" Margin="0,0,0,10" />
+            <ListBox ItemsSource="{Binding Associations}" SelectedItem="{Binding SelectedAssociation, Mode=TwoWay}" Height="500" />
+        </StackPanel>
+        <ContentControl Grid.Column="1" Margin="10" Content="{Binding DetailViewModel}">
+            <ContentControl.ContentTemplate>
+                <DataTemplate>
+                    <views:AssociationDetailView DataContext="{Binding}" />
+                </DataTemplate>
+            </ContentControl.ContentTemplate>
+        </ContentControl>
+    </Grid>
+</Window> 
