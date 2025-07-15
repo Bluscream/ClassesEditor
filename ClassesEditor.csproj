@@ -1,0 +1,4 @@
+  <ItemGroup>
+    <Compile Include="ViewModels\*.cs" />
+    <Compile Include="Services\*.cs" />
+  </ItemGroup> 
