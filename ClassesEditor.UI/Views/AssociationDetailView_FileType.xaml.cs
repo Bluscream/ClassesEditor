@@ -2,11 +2,11 @@ using System.Windows;
 using System.Windows.Controls;
 using ClassesEditor.ViewModels;
 
-namespace Views
+namespace ClassesEditor.UI.Views
 {
-    public partial class AssociationDetailView : UserControl
+    public partial class AssociationDetailView_FileType : UserControl
     {
-        public AssociationDetailView()
+        public AssociationDetailView_FileType()
         {
             InitializeComponent();
         }

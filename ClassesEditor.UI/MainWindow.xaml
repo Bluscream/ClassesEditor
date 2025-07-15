@@ -1,0 +1,58 @@
+﻿<Window x:Class="ClassesEditor.UI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ClassesEditor.UI"
+        xmlns:views="clr-namespace:ClassesEditor.UI.Views"
+        mc:Ignorable="d"
+        Title="Classes Editor" Height="800" Width="1100">
+    <TabControl>
+        <TabItem Header="File Types">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="250" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0" Margin="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Button Content="Refresh" Click="Refresh_Click_FileType" Margin="0,0,0,10" Grid.Row="0" />
+                    <ListBox ItemsSource="{Binding Associations}" SelectedItem="{Binding SelectedAssociation, Mode=TwoWay}" Grid.Row="1" MinHeight="150" VerticalAlignment="Stretch" />
+                </Grid>
+                <ContentControl Grid.Column="1" Margin="10" Content="{Binding DetailViewModel}">
+                    <ContentControl.ContentTemplate>
+                        <DataTemplate>
+                            <views:AssociationDetailView_FileType DataContext="{Binding}" />
+                        </DataTemplate>
+                    </ContentControl.ContentTemplate>
+                </ContentControl>
+            </Grid>
+        </TabItem>
+        <TabItem Header="URI Protocols">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="250" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0" Margin="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Button Content="Refresh" Click="Refresh_Click_Protocol" Margin="0,0,0,10" Grid.Row="0" />
+                    <ListBox ItemsSource="{Binding Associations}" SelectedItem="{Binding SelectedAssociation, Mode=TwoWay}" Grid.Row="1" MinHeight="150" VerticalAlignment="Stretch" />
+                </Grid>
+                <ContentControl Grid.Column="1" Margin="10" Content="{Binding DetailViewModel}">
+                    <ContentControl.ContentTemplate>
+                        <DataTemplate>
+                            <views:AssociationDetailView_Protocol DataContext="{Binding}" />
+                        </DataTemplate>
+                    </ContentControl.ContentTemplate>
+                </ContentControl>
+            </Grid>
+        </TabItem>
+    </TabControl>
+</Window>

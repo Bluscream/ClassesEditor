@@ -2,6 +2,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using ClassesEditor.Services;
+using System.Diagnostics;
 
 namespace ClassesEditor.ViewModels
 {
@@ -30,19 +31,29 @@ namespace ClassesEditor.ViewModels
         public MainViewModel(AssociationFilterMode filterMode = AssociationFilterMode.FileType)
         {
             _filterMode = filterMode;
+            Debug.WriteLine($"MainViewModel created for mode: {_filterMode}");
             RefreshAssociations();
         }
 
         public void RefreshAssociations()
         {
+            Debug.WriteLine($"Refreshing associations for mode: {_filterMode}");
             Associations.Clear();
+            int count = 0;
             foreach (var assoc in _registryService.ListAssociations())
             {
                 if (_filterMode == AssociationFilterMode.FileType && assoc.StartsWith("."))
+                {
                     Associations.Add(assoc);
+                    count++;
+                }
                 else if (_filterMode == AssociationFilterMode.Protocol && !assoc.StartsWith("."))
+                {
                     Associations.Add(assoc);
+                    count++;
+                }
             }
+            Debug.WriteLine($"Found {count} associations for mode: {_filterMode}");
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
