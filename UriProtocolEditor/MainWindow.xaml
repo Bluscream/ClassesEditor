@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ClassesEditor.ViewModels;assembly=ClassesEditor.Shared"
         xmlns:views="clr-namespace:Views"
         mc:Ignorable="d"
-        Title="URI Protocol Editor" Height="600" Width="900">
+        Title="URI Protocol Editor" Height="700" Width="900">
     <!-- DataContext will be set in code-behind -->
     <Grid>
         <Grid.ColumnDefinitions>
