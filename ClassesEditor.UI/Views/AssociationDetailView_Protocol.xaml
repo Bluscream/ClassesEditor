@@ -6,23 +6,17 @@
              mc:Ignorable="d"
              d:DesignHeight="400" d:DesignWidth="400">
     <StackPanel Margin="20">
+        <TextBlock Text="Key Name:" FontWeight="Bold" />
+        <TextBox Text="{Binding AssociationName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,0,10" />
         <TextBlock Text="Association Details" FontWeight="Bold" FontSize="16" Margin="0,0,0,10" />
         <TextBlock Text="Registry Path:" FontWeight="Bold" />
         <TextBlock Text="{Binding RegistryPath}" FontFamily="Consolas" Margin="0,0,0,10" />
         <TextBlock Text="Display Name:" />
         <TextBox Text="{Binding DisplayName, Mode=TwoWay}" Margin="0,0,0,10" />
-        <TextBlock Text="Content Type:" />
-        <TextBox Text="{Binding ContentType, Mode=TwoWay}" Margin="0,0,0,10" />
-        <TextBlock Text="Perceived Type:" />
-        <TextBox Text="{Binding PerceivedType, Mode=TwoWay}" Margin="0,0,0,10" />
         <TextBlock Text="Default Icon:" />
         <TextBox Text="{Binding DefaultIcon, Mode=TwoWay}" Margin="0,0,0,10" />
         <TextBlock Text="Open Command:" />
         <TextBox Text="{Binding OpenCommand, Mode=TwoWay}" Margin="0,0,0,10" />
-        <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
-            <CheckBox Content="Always Show Extension" IsChecked="{Binding AlwaysShowExt, Mode=TwoWay}" Margin="0,0,10,0" />
-            <CheckBox Content="No Recent Docs" IsChecked="{Binding NoRecentDocs, Mode=TwoWay}" />
-        </StackPanel>
         <TextBlock Text="Info Tip:" />
         <TextBox Text="{Binding InfoTip, Mode=TwoWay}" Margin="0,0,0,10" />
         <TextBlock Text="Open With List (executables):" />

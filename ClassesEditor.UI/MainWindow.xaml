@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ClassesEditor.UI"
         xmlns:views="clr-namespace:ClassesEditor.UI.Views"
         mc:Ignorable="d"
-        Title="Classes Editor" Height="800" Width="1100">
+        Title="Classes Editor" Height="900" Width="1100">
     <TabControl>
         <TabItem Header="File Types">
             <Grid>
